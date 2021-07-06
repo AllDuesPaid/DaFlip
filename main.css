@@ -1,0 +1,50 @@
+html {
+  background: url("2_game_background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+.container {
+  width: 200px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+#card {
+  /* important:
+     100% of width & 100% of height
+     ensure transform-origin will occur in the center of container
+  */
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  transition: transform 1s;
+}
+
+#card figure {
+  display: block;
+  position: absolute; /* reset figure position*/
+  width: 100%; /* width should be the same as #card, otherwise it wont be center flipped*/
+  height: 100%;
+  backface-visibility: hidden; /* hide the back-side of the faces when they are faced away from the viewer */
+  margin: 0;
+  padding: 0;
+}
+
+#card .front {
+  background: black;
+  font-size: 7em;
+}
+#card .back {
+  background: black;
+  transform: rotateY(180deg);
+}
+
+.caption {
+  text-align: center;
+  color: #fff;
+  font-size: 4em;
+}
+#card:hover {
+  transform: rotateY(180deg);
+}
